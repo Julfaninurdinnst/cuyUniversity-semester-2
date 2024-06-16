@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light&display=swap");
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Shadows Into Light", cursive;
+}
+:root {
+  --bg-primary: rgb(15, 138, 4);
+  --bg-secondary: #dfdfdf;
+  --txt-primary: #dfdfdf;
+  --txt-secondary: #333333;
+  --icons-bg-primary: rgb(80, 138, 4);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--bg-primary);
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+}
+.card {
+  background-color: var(--bg-secondary);
+  border: 2px solid white;
+  padding: 10px;
+  margin: 10px;
+  color: var(--txt-secondary);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.title {
+  font-size: 2em;
+}
+.icons {
+  font-size: 24px;
+  color: var(--icons-bg-primary);
+  margin-top: 8px;
+}
+.desription {
+  margin-top: 8px;
+  font-size: 0.5em;
+}
+
+.btn {
+  margin-top: 16px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+.btn:hover {
+  background-color: var(--bg-primary);
+  color: var(--txt-primary);
+  transform: rotate(3deg);
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  transition: 0.3 ease-in-out;
+  -webkit-transition: 0.3 ease-in-out;
+  -moz-transition: 0.3 ease-in-out;
+  -ms-transition: 0.3 ease-in-out;
+  -o-transition: 0.3 ease-in-out;
+}
