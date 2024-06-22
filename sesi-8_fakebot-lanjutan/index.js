@@ -1,6 +1,8 @@
 let init = 0;
 const answer = document.getElementById("answer");
 const quiz = document.getElementById("quiz");
+const loader = document.querySelector(".loader");
+const container = document.querySelector(".container");
 
 const botAnswer = (data) => {
   return [
@@ -12,10 +14,11 @@ const botAnswer = (data) => {
     `oh lagi senang main ${data?.hobi} sama dong kita....`,
   ];
 };
-
+loader.style.display = "none";
 answer.innerHTML = botAnswer()[0];
 let userData = [];
 function botStart() {
+  if (quiz.value.length < 1) return alert("tolong masukkan input anda");
   init++;
   if (init === 1) {
     botDelay({ nama: quiz.value });
@@ -32,8 +35,12 @@ function botStart() {
   }
 }
 function botDelay(userAnswer) {
+  loader.style.display = "block";
+  container.style.filter = "blur(8px)";
   setTimeout(() => {
     answer.innerHTML = botAnswer(userAnswer)[init];
+    loader.style.display = "none";
+    container.style.filter = "none";
   }, 1500);
   userData.push(quiz.value);
   quiz.value = "";
@@ -45,5 +52,8 @@ function finishing() {
   quiz.value = "";
 }
 function botEnd() {
+  alert(
+    `terimasih ${userData[0]} sudah berkunjung, anda akan diarahkan ke halaman utama `
+  );
   location.reload();
 }

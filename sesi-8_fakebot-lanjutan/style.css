@@ -4,20 +4,19 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: coral;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin: 0 auto;
+  width: 500px;
 }
 .wrapper {
   display: flex;
-  align-items: inherit;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  max-width: 600px;
+  min-height: 100vh;
+  min-width: 375px;
 }
 .row {
   display: flex;
@@ -33,13 +32,13 @@ h1 {
 button {
   border: none;
   padding: 20px;
-  background-color: #fff;
+  background-color: lawngreen;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
   font-weight: 600;
 }
 button:hover {
-  background-color: #a1a1a1;
-  color: #eaeaea;
+  background-color: green;
+  color: whitesmoke;
   transform: scale(120%);
   transition: 0.5 ease-in-out;
   -webkit-transform: scale(120%);
@@ -58,4 +57,37 @@ input {
   padding: 10px;
   font-size: 24px;
   margin-top: 10px;
+}
+
+.loader {
+  width: 85px;
+  height: 85px;
+  position: absolute;
+  border-top: 15px solid lawngreen;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  border-radius: 50%;
+  animation: 1.5s spin infinite linear;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-animation: 1.5s spin infinite linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
 }
